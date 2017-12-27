@@ -1,0 +1,12 @@
+<div class="description" *ngIf="user">
+  <div class="userManipulator">
+    <div class="userManipulator__header">
+      Actions with user - "{{user.login}}" :
+    </div>
+    <div class="manipulations">
+      <button class="manipulations__btn btn_size_m" (click)="delete()">Delete</button>
+      <button class="manipulations__btn btn_size_m" (click)="getUserApartments()">Booked Apartments</button>
+    </div>
+  </div>
+  <apartments [apartments]="userApartments"></apartments>
+</div>

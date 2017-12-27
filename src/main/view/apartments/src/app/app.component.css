@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  position: fixed;
+  height: 65px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.9);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.header a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  opacity: 0.7;
+  text-align: center;
+  height: 60px;
+  padding: 16px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.header a:hover {
+  opacity: 1.0;
+  background: rgba(0,0,0,0.5);
+}
+
+.header__title{
+  font-size: 24px;
+  pointer-events: none;
+  cursor: default;
+}
+
+.header__links{
+  font-size: 20px;
+}
+

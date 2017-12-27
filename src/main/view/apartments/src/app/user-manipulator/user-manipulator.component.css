@@ -1,0 +1,49 @@
+.userManipulator {
+
+}
+
+.userManipulator__header {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.manipulations {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: space-around;
+}
+
+.manipulations__btn {
+  background-color: #F2F2F2;
+  opacity: 0.7;
+  /*background-color: #f4511e;*/
+  border: none;
+  color: black;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.manipulations__btn:active {
+  opacity: 1;
+}
+
+.manipulations__btn:hover {
+  opacity: 1;
+}
+
+.manipulations__btn:focus {
+  outline: none;
+}
+
+.btn_size_m{
+  border-radius: 4px;
+  width: 8em;
+  font-size: 1em;
+  padding: 5px;
+}
+
+

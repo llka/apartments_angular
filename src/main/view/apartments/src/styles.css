@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+
+@font-face {
+  font-family: 'Pangolin', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  font-family: "Pangolin", sans-serif;
+}
+body {
+  margin: 0;
+  padding-top: 65px;
+  background-color: rgba(0, 0, 0, 0.91);
+}
+* {
+  box-sizing: border-box;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/*header responsive*/
+@media screen and (max-width: 700px) {
+  .header a:not(:first-child) {display: none;}
+  .header a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 700px) {
+  .header.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 0;
+  }
+  .header.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    margin-right: 40px;
+  }
+}
+/*modal responsive*/
+@media only screen and (max-width: 750px) {
+  .modal {
+    width: 90%;
+  }
+  table tr td .button {
+    border-radius: 2px;
+    /*background-color: #f4511e;*/
+    background-color: #009f6d;
+    border: none;
+    color: #F2F2F2;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+    width: 4em;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .modal {
+    width: 40%;
+  }
+}
+
+/*background_line responsive*/
+@media only screen and (max-width: 400px) {
+  .q {
+    height: 229px;
+  }
+}
+@media only screen and (min-width: 401px) {
+  .q {
+    height: 329px;
+  }
+}
+
+/*footer on small pages*/
+@media only screen and (max-width: 440px) {
+  #bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 96%;
+    margin: 8px;
+  }
+  .footer .language h3{
+    font-size: 10px;
+  }
+  .footer .language ul{
+    margin-top: -4px;
+  }
+  .footer .language ul li a img{
+    width: 15px;
+    height: 15px;
+  }
+}
+@media only screen and (min-width: 440px) {
+  #bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 97%;
+    margin: 8px;
+  }
+}
+@media only screen and (min-width: 680px) {
+  #bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 98%;
+    margin: 8px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 99%;
+    margin: 8px;
+  }
+}
+
+
+.messageCounter{
+  margin-left: 4px;
+  font-size: 8px;
+  text-align: center;
+  vertical-align: top;
+  background-color: #009f6d;
+  height: 12px;
+  width: 12px;
+  padding: 1px;
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+}
+
+.mask {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(255,255,255,0.3);
+  padding-top: 50px;
+}
+.modal {
+  border-radius: 8px;
+  background: rgba(0,0,0,0.95);
+  margin: 5% auto 15% auto;
+  padding: 40px 0;
+  position: relative;
+}
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.modalMain{
+  text-align: center;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 17px;
+  width: 100%;
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #009f6d;
+  /*background-color: #f4511e;*/
+  border: none;
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 1em;
+  padding: 1em;
+  width: 8em;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.button:active {
+  background-color: #04533d;
+  /*background-color: #f4511e;*/
+}
+.button:hover{
+  background-color: #04533d;
+  /*background-color: #B43114;*/
+}
+.button:focus {
+  outline: none;
+}
+
+.buttonError {
+  border-radius: 4px;
+  /*background-color: #009f6d;*/
+  background-color: rgba(250, 53, 71, 0.83);
+  border: none;
+  color: #F2F2F2;
+  text-align: center;
+  font-size: 1em;
+  padding: 1em;
+  width: 22em;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.buttonError:active {
+  /*background-color: #04533d;*/
+  background-color: rgba(250, 53, 71, 0.56);
+}
+.buttonError:hover{
+  /*background-color: #04533d;*/
+  background-color: rgba(250, 53, 71, 0.56);
+}
+
+.description{
+  border-radius: 8px;
+  background: rgba(0,0,0,0.3);
+  color: #f2f2f2;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  cursor: default;
+  margin-bottom: 2%;
+}
+
+.language {
+  margin-top: -15px;
+  width:auto;
+}
+
+.language h3{
+  text-align:center;
+  color:#F2F2F2;
+  cursor: default;
+}
+
+.language ul{
+  margin-top: -15px;
+  margin-bottom: -0px;
+  list-style:none;
+  padding: 0;
+  text-align: center;
+}
+.language li{
+  margin: 5px;
+  display: inline;
+}
+.language li a{
+  text-align: center;
+  color:#F2F2F2;
+  text-decoration:none;
+  font-size: 1em;
+}
+.language li a img{
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.language li a img:hover{
+  color: white;
+  opacity: 1.0;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+.footer {
+  border-radius: 5px;
+  background: rgba(0,0,0,0.5);
+  padding: 5px;
+}

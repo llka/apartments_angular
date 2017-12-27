@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="description">
+      <ul class="users">
+        <div class="user user_bordered-bottom_true">
+          <div class="user__info user__info_size_s">Id</div>
+          <div class="user__info user__info_size_m">Login</div>
+          <div class="user__info user__info_size_s">Ban</div>
+        </div>
+        <li *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
+          <div class="user">
+            <div class="user__info user__info_size_s">{{user.id}}</div>
+            <div class="user__info user__info_size_m">{{user.login}}</div>
+            <div class="user__info user__info_size_s">{{user.ban}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+      <user-manipulator [user]="selectedUser"></user-manipulator>
+  </div>
+  <div class="col-1"></div>
+</div>

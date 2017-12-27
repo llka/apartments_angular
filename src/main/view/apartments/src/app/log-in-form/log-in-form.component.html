@@ -1,0 +1,32 @@
+<div *ngIf="!login; else loginFormTemplate">
+  <form [formGroup]="loginForm" (ngSubmit)="handleForm(loginForm.value)">
+    <div class="form-container">
+      <div class="form-container__row">
+        <h1>Log In Form</h1>
+      </div>
+      <div class="form-container__row">
+        <label class="input-text-label">Login*</label>
+        <input class="input-text" type="text" formControlName="login">
+        <div class="alert" *ngIf="!loginForm.controls['login'].valid && loginForm.controls['login'].touched">{{ loginAlert }}</div>
+      </div>
+      <div class="form-container__row">
+        <label class="input-text-label">Password*</label>
+        <input class="input-text" type="password" formControlName="password">
+        <div class="alert" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">{{ passwordAlert }}</div>
+      </div>
+      <div class="form-container__row form-container__row_submit">
+        <input type="submit" class="button" value="Log In" [disabled]="!loginForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #loginFormTemplate>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>{{ login }}</h1>
+
+      <p>{{ password }}</p>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,10 @@
+<ul class="apartments">
+  <li *ngFor="let apartment of apartments">
+    <div class="apartment">
+      <div class="apartment__info apartment__info_size_s">{{apartment.id}}</div>
+      <div class="apartment__info apartment__info_size_m">{{apartment.bookedFrom}}</div>
+      <div class="apartment__info apartment__info_size_m">{{apartment.bookedTo}}</div>
+      <div class="apartment__info apartment__info_size_s">{{apartment.cost}}</div>
+    </div>
+  </li>
+</ul>

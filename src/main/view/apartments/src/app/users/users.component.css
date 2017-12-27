@@ -1,0 +1,28 @@
+.users {
+  list-style: none;
+  padding: 4%;
+}
+
+.user {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__info {
+  text-align: center;
+}
+
+.user_bordered-bottom_true {
+  border-bottom: solid 1px #F2F2F2;
+}
+
+.user__info_size_s {
+  width: 25%;
+}
+
+.user__info_size_m {
+  width: 50%;
+}
