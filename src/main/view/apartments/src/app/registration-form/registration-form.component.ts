@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../data.service';
 
 @Component({
-  selector: 'log-in-form',
-  templateUrl: './log-in-form.component.html',
-  styleUrls: ['./log-in-form.component.css']
+  selector: 'app-registration-form',
+  templateUrl: './registration-form.component.html',
+  styleUrls: ['./registration-form.component.css']
 })
-export class LogInFormComponent implements OnInit {
+export class RegistrationFormComponent implements OnInit {
 
-  loginForm: FormGroup;
+  registrationForm: FormGroup;
   post: any;
   login: string;
   password: string;
@@ -17,7 +17,7 @@ export class LogInFormComponent implements OnInit {
   passwordAlert = 'This field is required';
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService) {
-    this.loginForm = this.formBuilder.group({
+    this.registrationForm = this.formBuilder.group({
         'login': [null, Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(20)])],
         'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(20)])]
       }
@@ -33,7 +33,7 @@ export class LogInFormComponent implements OnInit {
     console.log(this.login);
     console.log(this.password);
 
-    this.dataService.sendLoginParams(this.login, this.password);
+    this.dataService.sendRegistrationParams(this.login, this.password);
     this.dataService.isAuthorized = true;
   }
 }

@@ -50,11 +50,15 @@ public class UserLogic {
         return userRepository.findByBanTrue();
     }
 
-    public User save(User user) {
-        String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
-        user.setPassword(encodedPassword);
-        return userRepository.save(user);
-
+    public User save(User user) throws LogicException {
+        try {
+            findByLogin(user.getLogin());
+        } catch (LogicException e) {
+            String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+            user.setPassword(encodedPassword);
+            return userRepository.save(user);
+        }
+        throw new LogicException("Sorry, login must be unique!");
     }
 
     public void deleteAll() {

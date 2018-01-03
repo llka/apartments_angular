@@ -54,13 +54,21 @@ public class UserController {
     }
 
     @PostMapping(consumes = MEDIA_TYPE_JSON, produces = MEDIA_TYPE_JSON)
-    public User createUser(@RequestBody User user) {
-        return userLogic.save(user);
+    public User createUser(@RequestBody User user) throws ControllerException {
+        try {
+            return userLogic.save(user);
+        } catch (LogicException e) {
+            throw new ControllerException(e);
+        }
     }
 
     @PutMapping(consumes = MEDIA_TYPE_JSON, produces = MEDIA_TYPE_JSON)
-    public User updateUser(@RequestBody User user) {
-        return userLogic.save(user);
+    public User updateUser(@RequestBody User user) throws ControllerException {
+        try {
+            return userLogic.save(user);
+        } catch (LogicException e) {
+            throw new ControllerException(e);
+        }
     }
 
     @DeleteMapping(value = "/{id}")

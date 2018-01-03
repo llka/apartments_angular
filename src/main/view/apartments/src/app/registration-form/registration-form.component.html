@@ -1,0 +1,22 @@
+<div>
+  <form [formGroup]="registrationForm" (ngSubmit)="handleForm(registrationForm.value)">
+    <div class="form-container">
+      <div class="form-container__row">
+        <h1>Registration Form</h1>
+      </div>
+      <div class="form-container__row">
+        <label class="input-text-label">Login*</label>
+        <input class="input-text" type="text" formControlName="login">
+        <div class="alert" *ngIf="!registrationForm.controls['login'].valid && registrationForm.controls['login'].touched">{{ loginAlert }}</div>
+      </div>
+      <div class="form-container__row">
+        <label class="input-text-label">Password*</label>
+        <input class="input-text" type="password" formControlName="password">
+        <div class="alert" *ngIf="!registrationForm.controls['password'].valid && registrationForm.controls['password'].touched">{{ passwordAlert }}</div>
+      </div>
+      <div class="form-container__row form-container__row_submit">
+        <input type="submit" class="button" value="Register" [disabled]="!registrationForm.valid">
+      </div>
+    </div>
+  </form>
+</div>

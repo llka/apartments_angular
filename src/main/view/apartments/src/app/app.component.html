@@ -4,11 +4,12 @@
       <a href="#">Ilka Group Hotel</a>
     </div>
     <div class="header__links">
-      <a routerLink="login" routerLinkActive="active">Log In</a>
-      <a routerLink="user" routerLinkActive="active">Users</a>
-      <a routerLink="apartment" routerLinkActive="active">Apartments</a>
+      <a *ngIf="authorized === true" (click)="logOut()">Log out</a>
+      <a *ngIf="authorized === false" (click)="updateIsAuthorizedStatus()" routerLink="login" routerLinkActive="active">Log In</a>
+      <a *ngIf="authorized === false" (click)="updateIsAuthorizedStatus()" routerLink="register" routerLinkActive="active">Register</a>
+      <a routerLink="user" routerLinkActive="active" (click)="updateIsAuthorizedStatus()">Users</a>
+      <a routerLink="apartment" routerLinkActive="active" (click)="updateIsAuthorizedStatus()">Apartments</a>
     </div>
   </nav>
   <router-outlet></router-outlet>
 </div>
-`
