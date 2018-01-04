@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import {DataService} from "../data.service";
 import {User} from '../User';
 import {Apartment} from "../Apartment";
@@ -7,6 +7,7 @@ import {Apartment} from "../Apartment";
   selector: 'user-manipulator',
   templateUrl: './user-manipulator.component.html',
   styleUrls: ['./user-manipulator.component.css'],
+  encapsulation: ViewEncapsulation.None,
   providers: [DataService]
 })
 export class UserManipulatorComponent implements OnInit {
@@ -18,7 +19,7 @@ export class UserManipulatorComponent implements OnInit {
   }
 
   delete(): void {
-    this.dataService.deleteUser(this.user.id).then(() => this.goBack());
+    this.dataService.deleteUser(this.user.id).then();
   }
 
   getUserApartments(): void {

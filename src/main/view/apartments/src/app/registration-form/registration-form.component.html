@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!login; else registrationFormTemplate">
   <form [formGroup]="registrationForm" (ngSubmit)="handleForm(registrationForm.value)">
     <div class="form-container">
       <div class="form-container__row">
@@ -20,3 +20,12 @@
     </div>
   </form>
 </div>
+
+<ng-template #registrationFormTemplate>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>Welcome, {{ login }}</h1>
+      <h2>Now log in and start booking</h2>
+    </div>
+  </div>
+</ng-template>

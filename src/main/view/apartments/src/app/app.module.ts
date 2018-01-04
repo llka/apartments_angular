@@ -7,11 +7,10 @@ import {UsersComponent} from './users/users.component';
 import {UserManipulatorComponent} from './user-manipulator/user-manipulator.component';
 import {ApartmentsComponent} from './apartments/apartments.component';
 import {AppRoutingModule} from './app-routing.module';
-import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { LogInFormComponent } from './log-in-form/log-in-form.component';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import {LogInFormComponent} from './log-in-form/log-in-form.component';
+import {RegistrationFormComponent} from './registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { RegistrationFormComponent } from './registration-form/registration-form
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,

@@ -5,10 +5,10 @@ import {DataService} from '../data.service';
 @Component({
   selector: 'log-in-form',
   templateUrl: './log-in-form.component.html',
-  styleUrls: ['./log-in-form.component.css']
+  styleUrls: ['./log-in-form.component.css'],
+  preserveWhitespaces: false
 })
 export class LogInFormComponent implements OnInit {
-
   loginForm: FormGroup;
   post: any;
   login: string;

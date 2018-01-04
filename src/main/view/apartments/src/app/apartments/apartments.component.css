@@ -1,0 +1,21 @@
+.apartments{
+  list-style-type: none;
+
+}
+
+.apartment{
+  display: flex;
+  justify-content: space-between;
+}
+
+.apartment__info{
+  padding: 10px;
+}
+
+.apartment__info_size_m{
+  width: 40%;
+}
+
+.apartment__info_size_s{
+  width: 20%;
+}

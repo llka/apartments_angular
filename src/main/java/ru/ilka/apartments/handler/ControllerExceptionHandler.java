@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import ru.ilka.apartments.exception.ControllerException;
 
-
 @org.springframework.web.bind.annotation.ControllerAdvice(basePackages = "ru.ilka.apartments.controller")
 public class ControllerExceptionHandler {
 
