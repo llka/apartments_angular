@@ -8,7 +8,8 @@ import {Apartment} from "../Apartment";
   templateUrl: './user-manipulator.component.html',
   styleUrls: ['./user-manipulator.component.css'],
   encapsulation: ViewEncapsulation.None,
-  providers: [DataService]
+  providers: [DataService],
+  preserveWhitespaces: false
 })
 export class UserManipulatorComponent implements OnInit {
 

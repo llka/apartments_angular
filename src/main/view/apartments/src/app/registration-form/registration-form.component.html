@@ -1,4 +1,4 @@
-<div *ngIf="!login; else registrationFormTemplate">
+<div *ngIf="arePasswordsSame !== 1; else registrationFormTemplate">
   <form [formGroup]="registrationForm" (ngSubmit)="handleForm(registrationForm.value)">
     <div class="form-container">
       <div class="form-container__row">
@@ -6,16 +6,24 @@
       </div>
       <div class="form-container__row">
         <label class="input-text-label">Login*</label>
-        <input class="input-text" type="text" formControlName="login">
+        <input class="input-text" type="text" formControlName="login" >
         <div class="alert" *ngIf="!registrationForm.controls['login'].valid && registrationForm.controls['login'].touched">{{ loginAlert }}</div>
       </div>
+
       <div class="form-container__row">
         <label class="input-text-label">Password*</label>
         <input class="input-text" type="password" formControlName="password">
         <div class="alert" *ngIf="!registrationForm.controls['password'].valid && registrationForm.controls['password'].touched">{{ passwordAlert }}</div>
       </div>
+
+      <div class="form-container__row">
+        <label class="input-text-label"><span>Repeat Password</span></label>
+        <input class="input-text" type="password" formControlName="passwordRepeat">
+        <div class="alert" *ngIf="!registrationForm.controls['passwordRepeat'].valid && registrationForm.controls['passwordRepeat'].touched">{{ passwordAlert }}</div>
+        <div class="alert" *ngIf="arePasswordsSame === 0">{{ passwordMatchAlert }}</div>
+      </div>
       <div class="form-container__row form-container__row_submit">
-        <input type="submit" class="button" value="Register" [disabled]="!registrationForm.valid">
+        <input type="submit" class="button" value="Register" [disabled]="!registrationForm.valid" >
       </div>
     </div>
   </form>

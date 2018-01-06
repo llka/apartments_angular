@@ -5,7 +5,8 @@ import {DataService} from '../data.service';
 @Component({
   selector: 'users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
+  preserveWhitespaces: false
 })
 export class UsersComponent implements OnInit {
 

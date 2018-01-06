@@ -4,7 +4,8 @@ import {Apartment} from "../Apartment";
 @Component({
   selector: 'apartments',
   templateUrl: './apartments.component.html',
-  styleUrls: ['./apartments.component.css']
+  styleUrls: ['./apartments.component.css'],
+  preserveWhitespaces: false
 })
 export class ApartmentsComponent implements OnInit {
   @Input() apartments: Apartment[];

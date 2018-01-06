@@ -1,5 +1,4 @@
-import {Timestamp} from "rxjs";
-export class Apartment{
+export class Apartment {
   private _id: number;
   private _bookedFrom: Date;
   private _bookedTo: Date;

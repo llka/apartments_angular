@@ -6,7 +6,7 @@
       </div>
       <div class="form-container__row">
         <label class="input-text-label">Login*</label>
-        <input class="input-text" type="text" formControlName="login">
+        <input class="input-text" type="text" formControlName="login" >
         <div class="alert" *ngIf="!loginForm.controls['login'].valid && loginForm.controls['login'].touched">{{ loginAlert }}</div>
       </div>
       <div class="form-container__row">

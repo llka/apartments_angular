@@ -51,12 +51,18 @@ public class UserLogic {
     }
 
     public User save(User user) throws LogicException {
+        String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        return userRepository.save(user);
+    }
+
+    public User create(User user) throws LogicException {
         try {
             findByLogin(user.getLogin());
         } catch (LogicException e) {
-            String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
-            user.setPassword(encodedPassword);
-            return userRepository.save(user);
+        String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        return userRepository.save(user);
         }
         throw new LogicException("Sorry, login must be unique!");
     }

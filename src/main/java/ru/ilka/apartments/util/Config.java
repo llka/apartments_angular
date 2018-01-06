@@ -10,12 +10,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import ru.ilka.apartments.handler.AuthFailureHandler;
 import ru.ilka.apartments.logic.UserLogic;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.Collections;
 
+import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
+@EnableSwagger2
 @EnableWebMvc
 @ComponentScan(value = "ru.ilka.apartments")
 @PropertySource("classpath:application.properties")
@@ -58,5 +68,31 @@ public class Config {
     @Bean
     public AuthFailureHandler authFailureHandler(){
         return new AuthFailureHandler();
+    }
+
+    //http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+    //https://editor.swagger.io//?_ga=2.161732990.35370229.1515158885-1944002411.1515158885#/
+    //http://localhost:8099/v2/api-docs
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("ru.ilka.apartments.controller"))
+                .paths(PathSelectors.any())
+                /*.paths(regex("/user.*"))*/
+                /*.paths(regex("/apartment.*"))*/
+                /*.paths(regex("/hotel.*"))*/
+                .build()
+                .apiInfo(apiInfo());
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfo(
+                "Apartments Booking REST API",
+                "Rest Api to manage and book apartments, developed with Spring (Boot, MVC, Security, JPA) , Angular 5, Oracle, Hibernate",
+                "API TOS",
+                "Terms of service",
+                new Contact("Ilya Kisel", "https://github.com/llka", "ilya_kisel@epam.com"),
+                "License of API", "API license URL", Collections.emptyList());
     }
 }

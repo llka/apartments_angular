@@ -55,8 +55,9 @@ public class UserController {
 
     @PostMapping(consumes = MEDIA_TYPE_JSON, produces = MEDIA_TYPE_JSON)
     public User createUser(@RequestBody User user) throws ControllerException {
+
         try {
-            return userLogic.save(user);
+            return userLogic.create(user);
         } catch (LogicException e) {
             throw new ControllerException(e);
         }

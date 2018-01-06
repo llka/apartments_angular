@@ -6,9 +6,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable()
 export class DataService {
 
-  private userUrl = '/user';  // URL to web API
-  private apartmentUrl = '/apartment';  // URL to web API
-  private hotelUrl = '/hotel';  // URL to web API
+  private userUrl = '/user';
+  private apartmentUrl = '/apartment';
+  private hotelUrl = '/hotel';
   private loginUrl = '/login';
   private logoutUrl = '/logout';
   private registerUrl = '/register';

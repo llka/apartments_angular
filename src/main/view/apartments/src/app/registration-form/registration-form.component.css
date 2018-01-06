@@ -23,6 +23,7 @@
 
 .input-text-label{
   padding: 7px;
+  white-space: nowrap;
 }
 
 .form-container__row_submit{
