@@ -1,4 +1,4 @@
-package ru.ilka.apartments.util;
+package ru.ilka.apartments.config;
 
 import oracle.jdbc.pool.OracleDataSource;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,8 +21,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Collections;
-
-import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
 @EnableSwagger2
@@ -92,7 +90,7 @@ public class Config {
                 "Rest Api to manage and book apartments, developed with Spring (Boot, MVC, Security, JPA) , Angular 5, Oracle, Hibernate",
                 "API TOS",
                 "Terms of service",
-                new Contact("Ilya Kisel", "https://github.com/llka", "ilya_kisel@epam.com"),
+                new Contact("Ilya Kisel", "https://github.com/llka/apartments_angular", "ilya_kisel@epam.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 }

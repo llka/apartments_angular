@@ -1,4 +1,4 @@
-package ru.ilka.apartments.util;
+package ru.ilka.apartments.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
