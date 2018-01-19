@@ -64,12 +64,8 @@ public class UserController {
     }
 
     @PutMapping(consumes = MEDIA_TYPE_JSON, produces = MEDIA_TYPE_JSON)
-    public User updateUser(@RequestBody User user) throws ControllerException {
-        try {
-            return userLogic.save(user);
-        } catch (LogicException e) {
-            throw new ControllerException(e);
-        }
+    public User updateUser(@RequestBody User user) {
+        return userLogic.save(user);
     }
 
     @DeleteMapping(value = "/{id}")

@@ -2,6 +2,10 @@ package ru.ilka.apartments.logic;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import ru.ilka.apartments.dao.ApartmentRepository;
@@ -13,11 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@CacheConfig(cacheNames = {"apartments"})
 public class ApartmentLogic {
 
     @Autowired
     private ApartmentRepository apartmentRepository;
 
+    @Cacheable(value = "apartments")
     public Apartment findById(int id) throws LogicException {
         Apartment apartment = apartmentRepository.findOne(id);
         if (apartment == null) {
@@ -26,6 +32,7 @@ public class ApartmentLogic {
         return apartmentRepository.findOne(id);
     }
 
+    @Cacheable(value = "apartments")
     public List<Apartment> findAll() {
         return apartmentRepository.findAll();
     }
@@ -51,14 +58,17 @@ public class ApartmentLogic {
         return apartmentRepository.findByCostGreaterThanEqualOrderByCost(minCost);
     }
 
+    @CacheEvict(value = "apartments", allEntries = true)
     public Apartment save(Apartment apartment) {
         return apartmentRepository.save(apartment);
     }
 
+    @CacheEvict(value = "apartments", allEntries = true)
     public void deleteAll() {
         apartmentRepository.deleteAll();
     }
 
+    @CacheEvict(value = "apartments", allEntries = true)
     public void delete(int id) throws LogicException {
         try {
             apartmentRepository.delete(id);

@@ -24,13 +24,9 @@ public class RegistrationController {
 
     @PreAuthorize("hasRole('USER')")
     @PostMapping(consumes = MEDIA_TYPE_JSON, produces = MEDIA_TYPE_JSON)
-    public void register(@RequestBody User user) throws ControllerException {
-        try {
-            logger.debug("registration start");
-            userLogic.save(user);
-            logger.debug(user);
-        } catch (LogicException e) {
-            throw new ControllerException(e);
-        }
+    public void register(@RequestBody User user) {
+        logger.debug("registration start");
+        userLogic.save(user);
+        logger.debug(user);
     }
 }

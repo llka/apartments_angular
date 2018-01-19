@@ -2,6 +2,11 @@ package ru.ilka.apartments.config;
 
 import oracle.jdbc.pool.OracleDataSource;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
+import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -20,11 +25,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Collections;
 
 @Configuration
 @EnableSwagger2
 @EnableWebMvc
+@EnableCaching
 @ComponentScan(value = "ru.ilka.apartments")
 @PropertySource("classpath:application.properties")
 public class Config {
@@ -64,7 +71,7 @@ public class Config {
     }
 
     @Bean
-    public AuthFailureHandler authFailureHandler(){
+    public AuthFailureHandler authFailureHandler() {
         return new AuthFailureHandler();
     }
 
@@ -92,5 +99,14 @@ public class Config {
                 "Terms of service",
                 new Contact("Ilya Kisel", "https://github.com/llka/apartments_angular", "ilya_kisel@epam.com"),
                 "License of API", "API license URL", Collections.emptyList());
+    }
+
+    @Bean
+    public CacheManager cacheManager() {
+        SimpleCacheManager cacheManager = new SimpleCacheManager();
+        cacheManager.setCaches(Arrays.asList(
+                new ConcurrentMapCache("users"),
+                new ConcurrentMapCache("apartments")));
+        return cacheManager;
     }
 }

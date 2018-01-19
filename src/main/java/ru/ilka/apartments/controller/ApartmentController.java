@@ -3,6 +3,7 @@ package ru.ilka.apartments.controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 import ru.ilka.apartments.entity.Apartment;
 import ru.ilka.apartments.entity.User;
