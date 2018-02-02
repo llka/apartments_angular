@@ -1,0 +1,10 @@
+<ul class="apartments-list">
+  <div class="apartment">
+    <div class="apartment__info apartment__info_size_m">booked From</div>
+    <div class="apartment__info apartment__info_size_m">booked To</div>
+    <div class="apartment__info apartment__info_size_s">cost $</div>
+  </div>
+  <li *ngFor="let apartmentListElt of apartmentsList">
+    <app-apartment [apartment]="apartmentListElt"></app-apartment>
+  </li>
+</ul>

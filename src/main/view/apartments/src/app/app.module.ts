@@ -11,6 +11,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LogInFormComponent} from './log-in-form/log-in-form.component';
 import {RegistrationFormComponent} from './registration-form/registration-form.component';
+import {ApartmentComponent} from './apartment/apartment.component';
+import {ApartmentsListComponent} from './apartments-list/apartments-list.component';
+import {ApartmentsDataService} from './apartments-data.service';
+import { SliderComponent } from './slider/slider.component';
+import { SliderService } from './slider.service';
 
 @NgModule({
   declarations: [
@@ -19,16 +24,19 @@ import {RegistrationFormComponent} from './registration-form/registration-form.c
     UserManipulatorComponent,
     ApartmentsComponent,
     LogInFormComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    ApartmentComponent,
+    ApartmentsListComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [DataService],
+  providers: [DataService, ApartmentsDataService, SliderService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

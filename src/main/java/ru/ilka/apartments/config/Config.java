@@ -98,7 +98,7 @@ public class Config {
                 "API TOS",
                 "Terms of service",
                 new Contact("Ilya Kisel", "https://github.com/llka/apartments_angular", "ilya_kisel@epam.com"),
-                "License of API", "API license URL", Collections.emptyList());
+                "License of API", "https://github.com/llka/apartments_angular", Collections.emptyList());
     }
 
     @Bean

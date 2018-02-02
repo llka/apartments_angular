@@ -1,0 +1,13 @@
+<div>
+  <div class="slider-title">{{title}}</div>
+  <div class="slider-container">
+    <div class="slider-container__label">{{minValue}}</div>
+    <div class="slider">
+      <input #slider type="range" min="{{minValue}}" max="{{maxValue}}" value="({{maxValue}} - {{minValue}})/2"
+             class="slider"
+             (mousemove)="changed(slider.value)" (mouseup)="buttonUp(slider.value)">
+      <div class="slider__value">{{currentValue}}</div>
+    </div>
+    <div class="slider-container__label">{{maxValue}}</div>
+  </div>
+</div>

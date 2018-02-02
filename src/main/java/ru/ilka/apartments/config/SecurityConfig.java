@@ -64,6 +64,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
                     .and()
                 .csrf()
                     .disable()
+//                .httpBasic();
+//                    .and()
                 .formLogin()
                     .loginPage("/login")
                     .failureHandler(authFailureHandler)

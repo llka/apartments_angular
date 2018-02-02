@@ -21,7 +21,11 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/ng2-slider-component/ng2-slider.component.js",
+        "../node_modules/ng2-slideable-directive/slideable.directive.js",
+        "../node_modules/ng2-styled-directive/ng2-styled.directive.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

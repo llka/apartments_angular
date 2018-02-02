@@ -8,5 +8,5 @@
       <button class="manipulations__btn btn_size_m" (click)="getUserApartments()">Booked Apartments</button>
     </div>
   </div>
-  <apartments [apartments]="userApartments"></apartments>
+  <app-apartments-list *ngIf="showBookedApartments" [apartmentsList]="userApartments"></app-apartments-list>
 </div>

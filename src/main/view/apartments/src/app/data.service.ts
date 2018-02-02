@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {User} from './User';
 import {Apartment} from './Apartment';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class DataService {
@@ -120,6 +120,7 @@ export class DataService {
   }
 
   // ---- apartment service -----
+
 
 
   // ---- booking service -----

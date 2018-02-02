@@ -15,6 +15,7 @@ export class UserManipulatorComponent implements OnInit {
 
   @Input() user: User;
   userApartments: Apartment[];
+  showBookedApartments = false;
 
   constructor(private dataService: DataService) {
   }
@@ -25,10 +26,7 @@ export class UserManipulatorComponent implements OnInit {
 
   getUserApartments(): void {
     this.dataService.getUserApartments(this.user.id).then(apartments => this.userApartments = apartments);
-  }
-
-  goBack(): void {
-    window.location.replace('');
+    this.showBookedApartments = true;
   }
 
   ngOnInit() {

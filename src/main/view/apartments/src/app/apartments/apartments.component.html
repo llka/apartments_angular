@@ -1,14 +1,19 @@
-<ul class="apartments">
-  <div class="apartment">
-    <div class="apartment__info apartment__info_size_m">booked From</div>
-    <div class="apartment__info apartment__info_size_m">booked To</div>
-    <div class="apartment__info apartment__info_size_s">cost $</div>
-  </div>
-  <li *ngFor="let apartment of apartments">
-    <div class="apartment">
-      <div class="apartment__info apartment__info_size_m">{{timestampToDate(apartment.bookedFrom)}}</div>
-      <div class="apartment__info apartment__info_size_m">{{timestampToDate(apartment.bookedTo)}}</div>
-      <div class="apartment__info apartment__info_size_s">{{apartment.cost}}</div>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="description">
+      <div class="nav-buttons">
+        <div class="nav-buttons__button">
+          <app-slider [type]="0" [minValue]="5" [maxValue]="150" [title]="'cost more than'"></app-slider>
+        </div>
+        <div class="nav-buttons__button">
+          <app-slider [type]="1" [minValue]="5" [maxValue]="150" [title]="'cost less than'"></app-slider>
+        </div>
+        <div class="button nav-buttons__button" (click)="find()">find appropriate</div>
+      </div>
+      <div class="title">{{title}}</div>
+      <app-apartments-list [apartmentsList]="allApartments"></app-apartments-list>
     </div>
-  </li>
-</ul>
+  </div>
+  <div class="col-1"></div>
+</div>
