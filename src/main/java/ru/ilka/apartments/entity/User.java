@@ -33,6 +33,9 @@ public class User implements IDatabaseEntity {
     @Column(name = "ENABLED", columnDefinition = "boolean default true", nullable = false)
     private boolean enabled;
 
+    /*  LAZY = fetch when needed
+    *   EAGER = fetch immediately
+    */
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "USERS_HAS_APARTMENTS",
             joinColumns = @JoinColumn(name = "USERS_FK", referencedColumnName = "ID"),
